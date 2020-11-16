@@ -1,0 +1,38 @@
+<div class="container-fluid col-md-10 mx-auto">
+    <mat-card class="card" style="box-shadow: black; border:1px solid grey">
+        <mat-card-title>
+            <p style="font-size: x-large;">My Assets </p> 
+            <hr>
+        </mat-card-title>
+        <mat-card-content>
+            <mat-accordion>
+                <mat-expansion-panel *ngFor="let asset of assets" style="background-color: rgba(180, 239, 243, 0.39);">
+                    <mat-expansion-panel-header >
+                        <mat-panel-title>
+                          <p  style="text-transform: uppercase;">{{asset.name}}</p>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="justify-content-center pt-4">
+                        <img [src]="'http://localhost:4000/products/images/'+asset.imgname" class="rounded float-right" style="height: 10rem;">
+                        <p>
+                            Asset Id : {{asset._id}} <br> 
+                            Name : {{asset.name}} <br>
+                            Price : {{asset.price}} <br>
+                            Compatibility : {{asset.compatibility}}<br>
+                            Image Format : {{asset.imageformat}}<br>
+                            Number of Triangles: {{asset.triangles}}<br>
+                            Number of Vertices: {{asset.vertices}}<br>
+                            Textures:{{asset.textures}}<br>
+                            Created on:{{asset.created}}<br>
+                            Category: {{asset.category}}<br>                          
+                        </p>
+                        
+                        <button nbButton hero status="danger" (click)="deleteModel(asset._id)">Delete</button>
+                    </div>
+                                   
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-card-content>
+    </mat-card>
+</div>
+

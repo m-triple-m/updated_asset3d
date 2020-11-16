@@ -1,0 +1,33 @@
+<nb-layout>
+
+  <nb-layout-header fixed>
+  <!-- Insert header here -->
+  </nb-layout-header>
+
+  <nb-layout-column>
+
+    <nb-layout-header fixed>
+      
+      <nb-actions>
+          <nb-action class="mt-2" nbTooltip="Home" nbTooltipIcon="home-outline"  [routerLink]="['/home']" routerLinkActive="router-link-active" >
+            <p class="h4">Asset 3D</p>
+          </nb-action>
+          <nb-action *ngIf="!userservice.loggedin" nbTooltip="Login" nbTooltipIcon="log-in-outline"  [routerLink]="['/app/login']" routerLinkActive="router-link-active" >Login</nb-action>
+          <nb-action *ngIf="!userservice.loggedin" nbTooltip="Register" nbTooltipIcon="person-outline"  [routerLink]="['/app/register']" routerLinkActive="router-link-active" >Register</nb-action>
+          <nb-action *ngIf="!userservice.loggedin" nbTooltip="Register" nbTooltipIcon="person-outline"  [routerLink]="['/app/sellerLogin']" routerLinkActive="router-link-active" >Seller Login</nb-action>
+          <nb-action *ngIf="userservice.loggedin" nbTooltip="Logout" nbTooltipIcon="log-out-outline"  (click)="userservice.logout()" right>Logout</nb-action>
+      </nb-actions>
+      <nb-user *ngIf="userservice.loggedin" class="ml-auto" size="large"
+               [name]="'dsds'"
+               picture="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png"
+               [routerLink]="['/userdb']" routerLinkActive="router-link-active" >
+      </nb-user>
+    </nb-layout-header>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>

@@ -1,0 +1,60 @@
+<br>
+<br>
+<div class="row justify-content-center">
+  <mat-card class="col-3" style="box-shadow: black; border:1px solid grey; padding:0px">    
+    <div class="card-body">
+      <p style="font-size: x-large;"> Sign Up </p> 
+      <hr>
+      <form [formGroup]="formdata" (ngSubmit)="submitRegister(formdata.value)">
+        <mat-form-field  appearance ="outline" style="width:100%"> 
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="name" formControlName="name">
+          <mat-icon matSuffix>account_circle</mat-icon>
+          <mat-error>Name required</mat-error>
+        </mat-form-field>
+        <mat-form-field  appearance ="outline" style="width:100%"> 
+          <mat-label>email</mat-label>
+          <input matInput placeholder="email" formControlName="email" type="email">
+          <mat-icon matSuffix> email</mat-icon>
+          <mat-error *ngIf="emailRequired('email')">E-mail Required</mat-error>
+          <mat-error *ngIf="emailValid('email')">Invalid e-mail</mat-error>
+        </mat-form-field>
+        <mat-form-field  appearance ="outline"  style="width:100%"> 
+          <mat-label>password</mat-label>
+          <input matInput placeholder="password" formControlName="password" type="password">
+          <mat-icon matSuffix>visibility_off</mat-icon>
+          <mat-error>Password required</mat-error>
+        </mat-form-field>
+        <mat-form-field  appearance ="outline"  style="width:100%"> 
+          <mat-label>repeat password</mat-label>
+          <input matInput placeholder="repeat password" formControlName="repassword" type="password">
+          <mat-icon matSuffix>visibility_off</mat-icon>
+          <mat-error>Password Not Matching</mat-error>
+        </mat-form-field>
+        <mat-form-field  appearance ="outline"  style="width:100%"> 
+          <mat-label>phone number</mat-label>
+          <input matInput placeholder="phone number" formControlName="contactnum" type="tel">
+          <mat-icon matSuffix>call</mat-icon>
+          <mat-error>Required</mat-error>
+        </mat-form-field>
+        <mat-form-field  appearance ="outline"  style="width:100%"> 
+          <mat-label>date of birth</mat-label>
+          <input matInput placeholder="date of birth" formControlName="dob" type="date">
+          <mat-icon matSuffix>calendar_today</mat-icon>
+          <mat-error>Required</mat-error>
+        </mat-form-field>
+        <hr>
+      </form>
+      <div>
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy.</a></p>
+      </div>
+      <div>
+      <button type="submit" class="btn btn-primary" style="width:100%">Sign Up</button>
+      </div>
+      <hr>
+      <button nbButton ghost status = "primary" [routerLink]="['/app/login']" routerLinkActive="router-link-active" >Already have an account</button>
+    </div>
+  </mat-card>
+</div>    
+
+

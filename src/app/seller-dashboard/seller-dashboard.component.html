@@ -1,0 +1,98 @@
+<!-- <br>
+<br>
+<div class="container-fluid row justify-content-center" *ngIf="showprofile">
+    <mat-card class="col-4" style="box-shadow: black; border:1px solid grey;">
+        <mat-card-title>
+            <p style="font-size: x-large;">Seller Profile</p>
+            <hr>
+        </mat-card-title>
+        <mat-card-content>
+            <p>
+                Name : {{currentuser.name}} <br>
+                Account id : {{currentuser._id}} <br>
+                E-mail Id : {{currentuser.email}} <br>
+                Contact Number : {{currentuser.contactnum}} <br>
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="row justify-content-center">
+                <button type="submit" class="btn btn-primary mr-4" (click)="updateUser(currentuser)">Update Profile</button>
+                <a class="btn btn-primary" href='./resetPassword'>Reset Password</a>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+
+
+<div  class="container" *ngIf="showeditform">    
+    <div class="row justify-content-center">
+        <div class="card mycard1 col-4">       
+            <div class="card-body">    
+                <p style="font-size:x-large;">Update your profile</p>      
+                <hr>            
+                <form [formGroup]="editform" (ngSubmit)=submitRegister(editform.value)>
+                    <mat-form-field appearance ="outline"  style="width:100%;">
+                        <mat-label> Name</mat-label>
+                        <input matInput placeholder="name" formControlName="name">
+                        <mat-icon matPrefix>account_circle</mat-icon>
+                        <mat-error>Name required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance ="outline"  style="width:100%;">
+                        <mat-label>E-mail</mat-label>
+                        <input matInput placeholder="E-mail"  type="email" formControlName="email">
+                        <mat-icon matPrefix>email</mat-icon>
+                    </mat-form-field>
+                    <mat-form-field appearance ="outline"  style="width:100%;">
+                        <mat-label>Contact Number</mat-label>
+                        <input matInput placeholder="Contact Number"  type="tel" formControlName="contactnum">
+                        <mat-icon matPrefix>phone</mat-icon>
+                        <mat-error>Required</mat-error>
+                    </mat-form-field>
+                    <div>
+                        <button type="submit" class="btn btn-primary" style="width:100%">Update</button>
+                    </div>                   
+                </form>
+            </div>                    
+        </div>
+    </div>           
+</div>
+
+ -->
+
+
+ <nb-layout>
+
+    <nb-layout-header fixed>
+      <button nbButton status="primary" (click)="toggleCompact()"><nb-icon icon="menu-2-outline"></nb-icon></button>
+      <nb-actions>
+        <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/']" routerLinkActive="router-link-active" >
+            <p class="h4 mt-2">Asset 3D</p>
+          </nb-action>
+          <nb-action nbTooltip="Login" nbTooltipIcon="log-in-outline" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</nb-action>
+          <nb-action nbTooltip="Register" nbTooltipIcon="person-outline" [routerLink]="['/register']" routerLinkActive="router-link-active" >Register</nb-action>
+          <nb-action nbTooltip="Logout" nbTooltipIcon="log-out-outline"  (click)="userservice.logout()" right>Logout</nb-action>
+      </nb-actions>
+      <nb-user class="ml-auto" size="large" *ngIf="userservice.loggedin"
+             [name]="userservice.currentUser.name"
+             picture="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png"
+             [routerLink]="['/userdb']" routerLinkActive="router-link-active" >
+    </nb-user>
+    </nb-layout-header>
+  
+    <nb-sidebar>
+        <nb-menu [items]="items"></nb-menu>
+    </nb-sidebar>
+  
+    <nb-layout-column style="margin-top: 0rem;">
+      <router-outlet></router-outlet>
+    </nb-layout-column>
+    
+  
+    <nb-layout-footer fixed>
+    <!-- Insert footer here -->
+    </nb-layout-footer>
+  
+  </nb-layout>
+  
+  

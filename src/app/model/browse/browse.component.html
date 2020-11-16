@@ -1,0 +1,22 @@
+<div class="col-md-10 mx-auto">
+    <p class="h2 text-center">Browse 3D Models</p>
+    <nb-search type="rotate-layout"></nb-search>
+    <div class="text-center" *ngIf="loading">
+        <ellipsis-loader></ellipsis-loader>
+    </div>
+    <div class="row">
+            <div class="col-md-3 mt-3" *ngFor="let asset of assets;">
+                <mat-card class="ch"  [routerLink]="['/app/modelDetails', asset._id]"
+                routerLinkActive="router-link-active">
+                <img [src]="'http://localhost:4000/products/images/'+asset.imgname" mat-card-image >
+                    <mat-card-content class="">
+
+                        <p class="card-t">{{asset.name}}</p>
+                        <p class="muted">by {{asset.seller.name}}</p>
+                        <p class="card-t"> ₹{{asset.price}}</p>
+
+                    </mat-card-content>
+                </mat-card> 
+            </div>
+    </div>
+</div>

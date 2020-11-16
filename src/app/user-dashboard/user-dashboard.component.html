@@ -1,0 +1,34 @@
+<nb-layout>
+
+  <nb-layout-header fixed>
+    <button nbButton status="primary" (click)="toggleCompact()"><nb-icon icon="menu-2-outline"></nb-icon></button>
+    <nb-actions>
+        <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/']" routerLinkActive="router-link-active" >
+          <p class="h4 mt-2">Asset 3D</p>
+        </nb-action>
+        <nb-action *ngIf="userservice.loggedin" nbTooltip="Logout" nbTooltipIcon="log-out-outline"  (click)="userservice.logout()" right>Logout</nb-action>
+    </nb-actions>
+    <nb-user class="ml-auto" size="large" *ngIf="userservice.loggedin"
+             [name]="userservice.currentUser.name"
+             picture="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png"
+             [routerLink]="['/userdb']" routerLinkActive="router-link-active" >
+    </nb-user>
+  </nb-layout-header>
+
+  <nb-sidebar>
+       <nb-menu [items]="items"></nb-menu>
+  </nb-sidebar>
+
+  
+
+  <nb-layout-column style="margin-top: 0rem;">
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+  
+
+  <nb-layout-footer fixed>
+  <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>
+

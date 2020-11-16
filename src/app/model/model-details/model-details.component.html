@@ -1,0 +1,44 @@
+<div class="container" *ngIf="model_data">
+    <mat-card>
+        <mat-card-content class="card-body">
+            <app-render [modeldata]="model_data"></app-render>
+            <hr>
+            <div class="row card-body">
+                <div class="col-md-8">
+                    <p class="display-4">{{model_data.name}}</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="display-4"><strong>₹{{model_data.price}}</strong></p>
+                </div>
+            </div>
+            <p class="mt-4">Uploaded By</p>
+            <div class="row col">
+                <div class="col-1">
+                    <img style="height: 5rem;" src="https://imgur.com/I80W1Q0.png" alt="">
+                </div>
+                <div class="col">
+                    <h5 class="h4">{{model_data.seller.name}}</h5>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6 text-muted">
+                    <p>Compatibilty with</p>
+                    <p>Image Format</p>
+                    <p>No. Vertices</p>
+                    <p>No. Textures</p>
+                    <p>No. Triangles</p>
+                    <p>Uploaded On</p>
+                </div>
+                <div class="col-6">
+                    <p>{{model_data.compatibility}}</p>
+                    <p>{{model_data.imageformat}}</p>
+                    <p>{{model_data.vertices}}</p>
+                    <p>{{model_data.textures}}</p>
+                    <p>{{model_data.triangles}}</p>
+                    <p>{{model_data.created | date}}</p>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div> 

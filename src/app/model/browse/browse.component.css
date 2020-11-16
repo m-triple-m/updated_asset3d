@@ -1,0 +1,29 @@
+.big-p{
+    font-size: 3rem;
+}
+
+.card-t{
+    font-size: 2rem;
+    padding: 0.2rem;
+}
+
+.muted{
+    font-size: 1.5rem;
+    color: gray;
+    padding: 0.2rem;
+}
+
+.ch{
+    -webkit-box-shadow: 0 10px 6px -6px rgba(2, 2, 2, 0.281);
+    -moz-box-shadow: 0 10px 6px -6px rgba(2, 2, 2, 0.281);
+         box-shadow: 0 10px 6px -6px rgba(2, 2, 2, 0.281);
+    transition-duration: 300ms;
+    transition-property: all;
+  }
+
+  .ch:hover{
+    -webkit-box-shadow: 0 20px 14px -6px rgba(2, 2, 2, 0.281);
+    -moz-box-shadow: 0 20px 14px -6px rgba(2, 2, 2, 0.281);
+         box-shadow: 0 20px 14px -6px rgba(2, 2, 2, 0.281);
+         transform: translateY(-20px);
+  }

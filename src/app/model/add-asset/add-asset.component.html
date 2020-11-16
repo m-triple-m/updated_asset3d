@@ -1,0 +1,101 @@
+<div  class="container">    
+    <div class="row justify-content-center">
+        <div class="card mycard1 col-6">       
+            <div class="card-body">
+                <p style="font-size: x-large;">Upload Model</p>
+                <hr>         
+                <form [formGroup]="form" (ngSubmit)="submitRegister(form.value)">
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance ="outline" style="width:100%">
+                                <mat-label> Name</mat-label>
+                                <input matInput placeholder="name" formControlName="name">
+                                <mat-icon matPrefix></mat-icon>
+                                <mat-error>Name required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col">        
+                            <mat-form-field appearance ="outline" style="width:100%">
+                                <mat-label>Compatibility</mat-label>
+                                <input matInput placeholder="compatibility"  formControlName="compatibility">
+                                <mat-icon matPrefix></mat-icon>
+                            </mat-form-field>
+                        </div>
+                    </div>    
+                    <div class="row">
+                        <div class="col">        
+                            <mat-form-field appearance ="outline" style="width:100%">
+                                <mat-label>Image Format</mat-label>
+                                <input matInput placeholder="Image Format" formControlName="imageformat">
+                                <mat-icon matPrefix></mat-icon>
+                                <mat-error>Required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col">        
+                            <mat-form-field appearance ="outline" style="width:100%">
+                                <mat-label>Number of vertices</mat-label>
+                                <input matInput placeholder="Number of vertices"  type="number" formControlName="vertices">
+                                <mat-icon matPrefix></mat-icon>
+                                <mat-error>Required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">        
+                            <mat-form-field appearance ="outline" style="width:100%">
+                                <mat-label>Number of triangles</mat-label>
+                                <input matInput placeholder="Number of triangles"  type="number" formControlName="triangles">
+                                <mat-icon matPrefix></mat-icon>
+                                <mat-error>Required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col">            
+                            <mat-form-field appearance ="outline" style="width:100%">
+                                <mat-label>Textures</mat-label>
+                                <input matInput placeholder="Textures"  type="number" formControlName="textures">
+                                <mat-icon matPrefix></mat-icon>
+                                <mat-error>Required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">        
+                            <mat-form-field appearance="outline" style="width:100%">
+                                <mat-label>Category</mat-label>
+                                <mat-select formControlName="category">
+                                    <mat-option value="option">Vehicles</mat-option>
+                                    <mat-option value="option">Weapons</mat-option>
+                                    <mat-option value="option">Architecture</mat-option>
+                                    <mat-option value="option">Furniture</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>   
+                        <div class="col">
+                            <mat-form-field appearance ="outline" style="width:100%">
+                                <mat-label>Price</mat-label>
+                                <input matInput placeholder="Price" formControlName="price">
+                                <mat-icon matPrefix></mat-icon>
+                                <mat-error>Required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>        
+                    <div class=" mt-2">
+                        <mat-label>Image : </mat-label>
+                        <input type="file" (change)="uploadImage($event)">
+                    </div>
+                    <div class="mt-2">
+                        <mat-label>Zipfile :  </mat-label>
+                        <input type="file" (change)="uploadFile($event)">
+                    </div>
+                    <div class="mt-2">
+                        <img [src]="imgURL" class="img-thumbnail" *ngIf="imgURL">
+                    </div>
+                    <div>
+                        <button type="submit"class="btn btn-primary" style="width:100%">Add</button>
+                    </div>                   
+                </form>
+            </div>                    
+        </div>
+    </div>           
+</div>
+

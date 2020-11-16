@@ -1,0 +1,32 @@
+<br>
+<br>
+<div class="row justify-content-center">
+  <mat-card class="col-3" style="box-shadow: black; border:1px solid grey; padding:0px">
+      <div class="card-body">
+        <p class="h5">Seller Login</p>
+        <hr>
+        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+          <mat-form-field  appearance ="outline" style="width:100%"> 
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="name" formControlName="name">
+            <mat-icon matSuffix>account_circle</mat-icon>
+            <mat-error>Name required</mat-error>
+          </mat-form-field>
+          <mat-form-field  appearance ="outline"  style="width:100%"> 
+            <mat-label>password</mat-label>
+            <input matInput placeholder="password" formControlName="password" type="password">
+            <mat-icon matSuffix>visibility_off</mat-icon>
+            <mat-error>Password required</mat-error>
+          </mat-form-field>
+          <div><button type="submit" class="btn btn-primary" style="width:100%">Login</button></div>
+        </form>
+        <div class="text-center">
+          <button class="text-center" nbButton ghost status = "primary" [routerLink]="['/app/resetPswd']" routerLinkActive="router-link-active" >Forgot Password</button>
+        </div>
+        <hr>
+        <button nbButton ghost status = "primary" [routerLink]="['/app/sellerRegistration']" routerLinkActive="router-link-active" >Does not have an account</button>
+      </div>
+    </mat-card>
+  </div>   
+  
+
