@@ -34,7 +34,7 @@ const routes: Routes = [
   {path:'user', component: UserDashboardComponent, canActivate: [UserloginGuard], children : [
     {path:'', component: ProfileComponent},
   ]},
-  {path:'sellerdb', component: SellerDashboardComponent, children : [
+  {path:'sellerdb', component: SellerDashboardComponent,canActivate: [UserloginGuard], children : [
     {path:'profile', component: ProfileComponent},
     {path:'manageModel', component: ManageModelComponent},
     {path:'addAsset', component: AddAssetComponent},

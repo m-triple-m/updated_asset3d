@@ -38,7 +38,7 @@ export class SellerDashboardComponent implements OnInit {
   ];
 
 
-  constructor(public userservice: UserServiceService, public sellerservice:SellerService, private fb:FormBuilder, private router: Router, private sidebarservice: NbSidebarService) { }
+  constructor(public userservice: UserServiceService, private sellerservice:SellerService, private fb:FormBuilder, private router: Router, private sidebarservice: NbSidebarService) { }
 
   ngOnInit(): void {
     
