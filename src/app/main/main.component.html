@@ -18,7 +18,7 @@
           <nb-action *ngIf="userservice.loggedin" nbTooltip="Logout" nbTooltipIcon="log-out-outline"  (click)="userservice.logout()" right>Logout</nb-action>
       </nb-actions>
       <nb-user *ngIf="userservice.loggedin" class="ml-auto" size="large"
-               [name]="'dsds'"
+               [name]="userservice.currentUser.name"
                picture="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png"
                [routerLink]="['/userdb']" routerLinkActive="router-link-active" >
       </nb-user>
