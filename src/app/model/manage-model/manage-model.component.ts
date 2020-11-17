@@ -18,7 +18,7 @@ export class ManageModelComponent implements OnInit {
   constructor(private userService: UserServiceService, private router: Router, private assetService: AssetService) { }
 
   ngOnInit(): void {
-    this.currentUser=JSON.parse(sessionStorage.getItem("seller"));
+    this.currentUser=JSON.parse(sessionStorage.getItem("user"));
     console.log(this.currentUser);
     document.body.classList.add('bg-reg');
     //this.initUser(this.currentuser);

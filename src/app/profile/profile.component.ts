@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit {
       this.showprofile=true;
       this.showeditform=false;
       sessionStorage.setItem('user',JSON.stringify(data));
-      this.router.navigate(['/userdb']);
+      this.router.navigate(['/app/profile']);
     })
     }
   updateUser(user){

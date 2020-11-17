@@ -21,7 +21,7 @@ export class AddAssetComponent implements OnInit {
   constructor(private assetService: AssetService, private fb:FormBuilder, private router: Router, private sellerService: SellerService) { }
   ngOnInit(): void {
     
-    this.currentuser=JSON.parse(sessionStorage.getItem('seller'));
+    this.currentuser=JSON.parse(sessionStorage.getItem('user'));
     document.body.classList.add('bg-reg');
     this.initUser();
   }

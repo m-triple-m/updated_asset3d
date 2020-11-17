@@ -45,7 +45,6 @@ submitLogin()
         
         sessionStorage.setItem('user',JSON.stringify(data));
         this.userservice.loggedin = true;
-        this.sellerservice.loggedin=true;
         Swal.fire({
           icon:'success',
           title:'Success',

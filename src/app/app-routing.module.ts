@@ -35,6 +35,7 @@ const routes: Routes = [
     {path:'', component: ProfileComponent},
   ]},
   {path:'sellerdb', component: SellerDashboardComponent, children : [
+    {path:'profile', component: ProfileComponent},
     {path:'manageModel', component: ManageModelComponent},
     {path:'addAsset', component: AddAssetComponent},
   ]},

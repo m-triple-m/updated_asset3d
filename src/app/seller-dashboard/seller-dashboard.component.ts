@@ -42,7 +42,7 @@ export class SellerDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.currentuser=JSON.parse(sessionStorage.getItem('seller'));
+    this.currentuser=JSON.parse(sessionStorage.getItem('user'));
     document.body.classList.add('bg-reg');
     this.initUser(this.currentuser);
   }
